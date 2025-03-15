@@ -36,84 +36,47 @@
         text-decoration: none;
       }
 
-      .container {
+      main {
         display: flex;
+        flex-direction: column;
+        gap: 16px;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        min-height: 100dvh;
         background-color: rgb(248, 250, 252);
       }
-
-      .card {
-        padding: 16px;
-        padding-bottom: 20px;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: rgb(188, 237, 208);
-        width: 368px;
-        margin: 0 auto;
-      }
-
-      .card img {
-        width: 336px;
-        height: 152px;
-        border-radius: 10px;
-        margin-bottom: 16px;
-      }
-
-      .card h2 {
-        font-size: 20px;
-        margin-top: 16px;
-      }
-
-      .card p {
-        font-size: 14px;
-        color: rgb(55, 65, 81);
-        line-height: 1.5;
-        margin-top: 6px;
-        margin-bottom: 20px;
-      }
-
-      .card footer {
-        margin-top: 20px;
-        font-size: 14px;
-        color: rgb(55, 65, 81);
-      }
-
-      .tag {
-        font-size: 12px;
-        font-weight: 800;
-        color: rgb(174, 49, 231);
-        background-color: rgba(238, 130, 238, 0.4);
-        padding: 4px 8px;
-        border-radius: 200px;
+      .custom-card {
+        --card-background: rgb(120, 131, 247);
+        --shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        --tag-background: rgb(85 53 115);
+        --tag-color: white;
+        --title-color: rgb(35 38 45);
+        --author-color: rgb(38 38 38);
+        --description-color: rgb(38 38 38);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <img
-          src="resources/Cactus.jpg"
-          alt="example image"
-        />
-        <span class="tag">Category</span>
-        <h2>Embracing Minimalism</h2>
-        <p>
-          From minimalist sculptures to minimalist paintings, this blog will
-          inspire you to appreciate the beauty that lies in simplicity.
-        </p>
-        <footer>
-          <span>Annie Spratt</span>
-        </footer>
-      </div>
-    </div>
-    <div class="author-info">
+    <main>
+      <minimal-blog-card></minimal-blog-card>
+      <minimal-blog-card
+        category="Technology"
+        title="Understanding Web Components"
+        author="John Doe"
+        image="resources/avatar.webp"
+        alt-image="Cactus illustration"
+        description="Learn how web components can help create reusable UI elements."
+        class="custom-card"
+      >
+      </minimal-blog-card>
+    </main>
+    <footer class="author-info">
       Coded by <a href="https://github.com/NickEsColR">NickEsColR</a> |
       Challenge by
       <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
         >devChallenges.io</a
       >.
-    </div>
+    </footer>
+    <script type="module" src="./dist/minimal-blog-card.js"></script>
   </body>
 </html>
